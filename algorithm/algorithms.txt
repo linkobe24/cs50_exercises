@@ -1,0 +1,7 @@
+search
+linear search 
+binary search
+
+sorting
+selection sort
+bubble sort
