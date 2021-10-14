@@ -5,3 +5,4 @@ binary search
 sorting
 selection sort
 bubble sort
+merge sort
