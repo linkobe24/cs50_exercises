@@ -22,7 +22,7 @@ int candidate_count;
 bool vote(std::string name);
 void print_winner(void);
 
-int main(int argc, std::string argv[])
+int main(int argc, char* argv[])
 {
     // Check for invalid usage
     if (argc < 2)
@@ -69,13 +69,32 @@ int main(int argc, std::string argv[])
 // Update vote totals given a new vote
 bool vote(std::string name)
 {
-    // TODO
+    for(int i = 0; i <  candidate_count; i++){
+        if(candidates[i].name == name){
+            candidates[i].votes ++;
+            return true;
+        }
+    }
     return false;
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
+    std::string most_voted;
+    int max_votes = 0;
+    for(int i = 0; i < candidate_count; i++){
+        if(candidates[i].votes >= max_votes){
+            max_votes = candidates[i].votes;
+        }
+    }
+
+    for(int i = 0; i < candidate_count; i++){
+        if(candidates[i].votes == max_votes){
+            std::cout << candidates[i].name << " " << std::endl;        
+
+        }
+    }
+
     return;
 }

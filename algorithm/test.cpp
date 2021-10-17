@@ -1,23 +1,19 @@
 #include<iostream>
 #include<string>
 
-typedef struct person
-{
-    std::string number;
-    std::string othnum;
-}person;
+typedef struct names{
+   std::string name;
+}names;
 
+int main(int argc, char* argv[]){
+   names person[3];
 
-int main(void){
+   for(int i = 0; i < argc-1; i++){
+      person[i].name = argv[i+1];
+   }
 
-    person nums = {"454545", "6565656"};
-
-    for(int i = 0; i < 2; i++){
-        if(nums.number == "3"){
-            std::cout << "greater";
-        };
-    }
-
-
+   std::cout << person[0].name << "\n";
+   std::cout << person[1].name << "\n";
+   std::cout << person[2].name<< "\n";
 
 }
